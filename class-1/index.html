@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Understanding Vue Js</title>
+</head>
+<body>
+
+<div id="app">
+    <p v-once>{{ message }}</p>
+    <p>{{ message }}</p>
+<!--    <a v-bind:href="link">Vue Js</a>-->
+    <p> {{ sayHello() }}- <a v-bind:href="url">Facebook</a></p>
+    <p v-html="htmlLink"></p>
+
+    <button v-on:click="counter++">Increment</button>
+    <p>{{ counter }}</p>
+    <p>{{ counter > 5 ? 'Greater Than 5' : 'Less Than 5' }}</p>
+
+    <p v-on:mousemove="updateCoordinates">
+<!--        v-on:mousemove.stop=""-->
+        {{ x }} / {{ y }}
+
+        <span v-on:mousemove.stop="">Dead Spot</span>
+
+    </p>
+
+    <input type="text" v-on:keyup.enter.space="warning">
+
+
+    <input type="text" v-model="name">
+    {{ name }}
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: 'ddsdsd',
+            message: 'Hello Vue!',
+            url: 'https://www.facebook.com/',
+            htmlLink: '<a href="https://www.facebook.com/">Facebook</a>',
+            counter: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            sayHello: function () {
+                this.message = 'Changed Message';
+                return 'Hello Developers';
+            },
+            // increment: function () {
+            //     this.counter++;
+            // }
+            updateCoordinates: function (event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            // stop: function (event) {
+            //     event.stopPropagation()
+            // }
+            warning: function () {
+                alert('Warning')
+            }
+        }
+    })
+</script>
+</body>
+</html>

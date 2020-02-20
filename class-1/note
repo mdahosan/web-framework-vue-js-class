@@ -1,0 +1,25 @@
+1. Basic dom
+2. Dom finishing + condition & looping
+3. Component + Templating + Authentication part1
+4. Authentication finishing + display products using api
+5. Create + Show + Edit + Delete product
+6. Product image upload + deployment project on server
+
+Accessing Data in the Vue Instance
+Binding to Attributes
+Understanding and Using Directives
+Disable Re-Rendering with v-once
+How to Output Raw HTML
+Listening to Events
+Getting Event Data from the Event Object
+
+Modifying an Event - with Event Modifiers
+http://vuejs.org/v2/guide/events.html#Event-Modifiers
+Listening to Keyboard Events
+http://vuejs.org/v2/guide/events.html#Key-Modifiers
+
+Writing JavaScript Code in the Templates
+Using Two-Way-Binding
+
+dom 2
+Reacting to Changes with Computed Properties

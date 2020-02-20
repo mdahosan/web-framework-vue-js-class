@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Understanding Vue Js</title>
+</head>
+<body>
+
+<div id="app">
+    <h1 v-once>{{ title }}</h1>
+    <h1>{{ title }}</h1>
+    <p>{{ sayHello() }} - <a v-bind:href="link">Vue Js</a></p>
+    {{ facebookUrl }}
+    <p v-html="facebookUrl"></p>
+
+<!--    <button v-on:click="increase">Click Me</button>-->
+    <button v-on:click="counter++">Click Me</button>
+    <button v-on:click="increase(2, $event)">Click Me</button>
+    <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Less than 10' }}</p>
+
+    <p v-on:mousemove="updateCoordinates">{{ x }}/{{ y }}
+<!--        <span v-on:mousemove="stop">DEAD SPOT</span>-->
+        <span v-on:mousemove.stop="">DEAD SPOT</span>
+    </p>
+
+    <input type="text" v-on:keyup.enter.space="warning">
+
+    <input type="text" v-model="name">
+    {{ name }}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title: 'Hello Vue!',
+            message: 'Welcome To Vue',
+            link: 'https://vuejs.org/v2/guide/',
+            facebookUrl: '<a href="https://www.facebook.com/">Facebook</a>',
+            counter: 0,
+            x: 0,
+            y: 0,
+            name: 'Ahosan'
+        },
+        methods: {
+            sayHello: function () {
+                this.title = 'Hi'
+                return this.message;
+            },
+            // increase: function () {
+            //     this.counter++;
+            // },
+            increase: function (step, event) {
+                this.counter+=step;
+            },
+            updateCoordinates: function (event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            // stop: function (event) {
+            //     event.stopPropagation()
+            // }
+            warning: function () {
+                alert('Alert!')
+            }
+        }
+    })
+</script>
+</body>
+</html>
