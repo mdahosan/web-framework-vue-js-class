@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+<!--    <ul>-->
+<!--&lt;!&ndash;        <li v-for="i in 10">{{ i }}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li v-for="brand in brands">{{ brand }}</li>&ndash;&gt;-->
+<!--        <li v-for="(brand, i) in brands">{{ brand }} ({{ i }})</li>-->
+<!--    </ul>-->
+
+<!--    <template v-for="(brand, i) in brands">-->
+<!--        <h1>{{ brand }}</h1>-->
+<!--        <p>{{ i }}</p>-->
+<!--    </template>-->
+
+<!--    <ul>-->
+<!--        <li v-for="car in cars">-->
+<!--            <div v-for="(value, key) in car">{{ key }}: {{ value }}</div>-->
+<!--&lt;!&ndash;            <div v-for="(value, key, index) in car">{{ key }}: {{ value }} ({{index}})</div>&ndash;&gt;-->
+<!--        </li>-->
+<!--    </ul>-->
+
+
+<!--    <ul>-->
+<!--        <li v-for="(n, index) in 10">{{ n }} ({{index}})</li>-->
+<!--    </ul>-->
+
+    <button @click="brands.push('new')">Add New</button>
+    <template v-for="(brand, i) in brands" :key="brand">
+        <h1>{{ brand }}</h1>
+        <p>{{ i }}</p>
+    </template>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            brands: ['BMW', 'Toyota'],
+            cars: [
+                {name: 'BMW', price: 1000000, model: 'BM-111'},
+                {name: 'Toyota', price: 500000, model: 'T-111'}
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+Conditional Rendering with v-if
+Using an Alternative v-if Syntax
+Dont Detach it with v-show
+https://vuejs.org/v2/guide/conditional.html#v-else-if.
+
+Rendering Lists with v-for
+Getting the Current Index
+Using an Alternative v-for Syntax
+Looping through Objects
+Looping through a List of Numbers
+Keeping Track of Elements when using v-for
+https://vuejs.org/v2/guide/list.html
+
+#######Conditionals and lists#########

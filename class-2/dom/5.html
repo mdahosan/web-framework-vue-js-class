@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Understanding Vue Js</title>
+</head>
+<style>
+    .red{background: red !important;}
+    .blue{background: blue !important;}
+    .green{background: green !important;}
+    .box{
+        height: 100px;
+        width: 100px;
+        background: darkgrey;
+        float: left;
+        margin-left: 2px;
+    }
+</style>
+
+<body>
+
+<div id="app">
+<!--   <div class="box" @click="attachedRed = !attachedRed" :class="{red: attachedRed, blue: !attachedRed}"></div>-->
+  <!--using computed property-->
+<!--   <div class="box" :style="{backgroundColor: color}"></div>-->
+   <div class="box" :style="[myStyle, {height: width +'px'}]"></div>
+   <hr>
+   <input type="text" v-model="color">
+   <input type="text" v-model="width">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            color: 'green',
+            width: 100,
+        },
+        computed: {
+            myStyle: function () {
+                return {
+                    backgroundColor: this.color,
+                    width: this.width + 'px',
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Instance</title>
+</head>
+<body>
+
+<div id="app">
+    <test-component></test-component>
+    <hr>
+    <test-component></test-component>
+</div>
+<div id="app2">
+    <test-component></test-component>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+
+    var cmp = {
+        data: function(){
+            return {status: 'critical'}
+        },
+        template: '<h1>Server Status: {{ status }} (<button @click="changeStatus">Change</button>)</h1>',
+        methods: {
+            changeStatus: function () {
+                this.status = 'Normal'
+            }
+        }
+    };
+
+    new Vue({
+        el: '#app',
+        components: {
+            'test-component': cmp
+        }
+    });
+
+    new Vue({
+        el: '#app2'
+    });
+
+</script>
+</body>
+</html>

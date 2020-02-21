@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    <h1 v-if="show">You can see me! <span>Hello</span></h1>-->
+<!--    <h1 v-else>Now you see me!</h1>-->
+    <template v-if="show">
+        <h1>You can see me!</h1>
+        <h1>Now you see me!</h1>
+    </template>
+
+    <button @click="show = !show">Click</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+####1###
+Some Basics about the VueJS Instance
+Using Multiple Vue Instances
+
+####2###
+Accessing the Vue Instance from Outside
+How VueJS manages your Data and Methods (console) //we can not add property from outside
+A Closer Look at el and data
+Placing refs and Using them on your Templates
+Mounting a Template
+
+####3####
+Using Components
+How VueJS Updates the DOM //theory
+The VueJS Instance Lifecycle
+
+An Introduction to Components
+Storing Data in Components with the Data Method
+
+####local-component####
+Registering Components Locally and Globally

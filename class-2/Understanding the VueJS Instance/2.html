@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Instance</title>
+</head>
+<body>
+
+<!--<div id="app1">-->
+<!--    <h1 ref="heading">{{ title }}</h1>-->
+<!--    <button @click="show" ref="showBtn">Show Paragraph</button>-->
+<!--    <p v-if="showParagraph" >This is not always visible</p>-->
+<!--</div>-->
+
+<!--<div id="app2">-->
+<!--    <h1>{{ title }}</h1>-->
+<!--    <button @click="changeTitle">Change title of app1</button>-->
+<!--    <hello></hello>-->
+<!--    <hello></hello>-->
+<!--    <hello></hello>-->
+<!--    <hello></hello>-->
+<!--</div>-->
+
+<div id="app3">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+   // var data = {
+   //     title: 'Vue JS First Instance',
+   //     showParagraph: false
+   // };
+   //
+   // Vue.component('hello', {
+   //     template: '<h1>Hello Developers</h1>'
+   // });
+   //
+   // var vm1 = new Vue({
+   //      // el: '#app1',
+   //      el: '#app1',
+   //      data: data,
+   //      methods: {
+   //          show: function () {
+   //              this.showParagraph = true;
+   //              this.updateTitle('Vue JS First Instance (updated)');
+   //              this.$refs.showBtn.innerText = 'Test';
+   //          },
+   //          updateTitle: function (title) {
+   //              this.title = title
+   //          }
+   //      },
+   //     watch: {
+   //          title: function (value) {
+   //              alert('Title changed, the new value is: ' + value)
+   //          }
+   //     }
+   //  });
+
+   // let data = vm1.$mount('#app1');
+   // document.getElementById('app1').appendChild(vm1.$el);
+   // console.log(vm1);
+
+   // var vm2 = new Vue({
+   //      el: '#app2',
+   //      data: data,
+   //      methods: {
+   //          changeTitle: function () {
+   //                  vm1.title = 'Changed'
+   //          }
+   //      }
+   //  });
+
+   // setTimeout(function () {
+   //      vm1.title = 'Changed From Outside!'
+   // },2000);
+   // console.log(vm1.$data === data);
+   // vm1.$refs.heading.innerText = 'Changed Something Else';
+   // console.log(vm1)
+   // vm1.$mount('#app1');
+   //
+   var vm3 = new Vue({
+        template: '<h1>Hello</h1>'
+    });
+   //
+   // vm3.$mount('#app3');
+   vm3.$mount();
+
+   document.getElementById('app3').appendChild(vm3.$el);
+
+
+</script>
+</body>
+</html>

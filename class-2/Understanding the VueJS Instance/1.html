@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Instance</title>
+</head>
+<body>
+
+<div id="app1">
+    <h1>{{ title }}</h1>
+    <button @click="show">Show Paragraph</button>
+    <p v-if="showParagraph">This is not always visible</p>
+</div>
+
+<div id="app2">
+    <h1>{{ title }}</h1>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app1',
+        data: {
+            title: 'Vue JS First Instance',
+            showParagraph: false
+        },
+        methods: {
+            show: function () {
+                this.showParagraph = true;
+                this.updateTitle('Vue JS First Instance (updated)')
+            },
+            updateTitle: function (title) {
+                this.title = title
+            }
+        }
+    });
+
+
+
+    new Vue({
+        el: '#app2',
+        data: {
+            title: 'Vue JS Second Instance'
+        }
+    });
+</script>
+</body>
+</html>
